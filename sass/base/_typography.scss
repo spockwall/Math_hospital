@@ -1,0 +1,56 @@
+@use 'sass:map';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;700&display=swap');
+
+
+$font-family: 'Noto Sans TC', sans-serif;
+
+$font-sizes : (
+    sm : (
+        font-size : 0.875rem,
+        line-height: 1.25rem
+    ),
+    md : (
+        font-size : 1.25rem,
+        line-height : 1.75rem
+    ),
+    lg : (
+        font-size : 1.5rem , 
+        line-height : 2rem
+    ),
+    xl : (
+        font-size : 2.25rem,
+        line-height : 2.5rem
+    ),
+    2xl : (
+        font-size : 3rem,
+        line-height : 1
+    ),
+    3xl : (
+        font-size : 3.5rem,
+        line-height : 1
+    )
+
+);
+
+$font-weights : (
+    thin : 100,
+    regular : 400 ,
+    bold : 700
+);
+.text{
+    @each $sizes , $font-maps in $font-sizes{
+        &-#{$sizes}{
+            font-size : map.get($font-maps,font-size);
+            line-height: map.get($font-maps,line-height);
+        }
+    }
+    @each $weight, $value in $font-weights{
+        &-#{$weight}{
+            font-weight: $value;
+        }
+    }
+}
+
+html{
+    font-family: $font-family;
+}

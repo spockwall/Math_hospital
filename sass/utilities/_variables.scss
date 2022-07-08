@@ -1,0 +1,52 @@
+
+$break-points : (
+    sm : 480px,
+    md : 768px,
+    lg : 992px,
+    xl : 1200px,
+);
+
+
+
+$color-maps : (
+    neutral: (
+        light: #FBFBFB,
+        normal:#d4d4d4,
+        dark: #262626
+    )
+    ,
+    primary: (
+        light: #bae6fd,
+        normal: #1266f1,
+        dark: #01579b
+    ),
+    secondary: (
+        light: #b388ff,
+        normal: #B23CFD,
+        dark: #6200EA
+    ),
+    danger: (
+        light: #ef5350,
+        normal : #f53154,
+        dark: #d50000
+    ),
+    success: (
+        light: #86efac,
+        normal: #22c55e,
+        dark: #047857
+    ),
+    warning: (
+
+    )
+);
+
+@each $color-types,$shadow-maps in $color-maps {
+    @each $shadow,$color-code in $shadow-maps{
+        .#{$color-types}-#{$shadow}{
+            color : $color-code;
+        }
+        .bg-#{$color-types}-#{$shadow}{
+            background-color: $color-code;
+        }
+    }
+}
