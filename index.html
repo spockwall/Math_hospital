@@ -4,12 +4,34 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/sass/main.scss">
     <title>Hello !</title>
   </head>
   <body>
-    <div class="text-xl">
-      Math Hospital.
-    </div>
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <img src="http://mhos.olpcs.com/img/math_hospital.png" class="navbar-brand nav__img"/>
+      </div>
+    </nav>
+    <main>
+      <form action="" class="form">
+        <div class="form__group">
+
+          <label for="account" class="form__label">帳號</label>
+          <input type="text" id="account" class="form__input form__input--account" required>
+        </div>
+        <div class="form__group">
+
+          <label for="account" class="form__label">密碼</label>
+          <input type="password" id="account" class="form__input form__input--account" required>
+        </div>
+        <div class="form__group">
+          <button class="btn btn-primary">
+            登入
+          </button>
+        </div>
+      </form>
+    </main>
   </body>
 </html>

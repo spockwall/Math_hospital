@@ -1,2 +1,10 @@
 @forward 'reset';
 @forward 'typography';
+@use '../utilities/functions';
+@use '../../node_modules/bootstrap/scss/bootstrap-reboot.scss';
+
+
+body{
+    min-height: 100vh;
+    background-color: functions.get-color(neutral,normal);
+}

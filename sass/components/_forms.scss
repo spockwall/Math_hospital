@@ -1,0 +1,33 @@
+@use '../utilities/functions';
+.form{
+    padding: 3rem;
+    background-color: functions.get-color(neutral,normal);
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    &__group{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__input{
+        padding: 0.5rem 1.25rem;
+        font-size: 1.25rem;
+        border : 0;
+        border-bottom: 3px solid transparent;
+        transition: all .1s;
+        background-color: functions.get-color(neutral,light);
+        border-radius: 3px;
+        box-shadow: 0 1rem 2rem rgba(black,0.2);
+        &:focus{
+            outline: none;
+            border-bottom: 3px solid functions.get-color(danger,light);
+        }
+        &:focus:valid{
+            border-bottom: 3px solid functions.get-color(success,light);
+        }
+    }
+}
